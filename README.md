@@ -5,7 +5,7 @@ Xi Chen, Rui Zeng, [Yichi Zhang](https://yichics.github.io/), Chunyi Zhou, Yuwen
 Code repository for the paper: [Revisiting Defense Mechanisms in Federated Learning: Effective and Efficient Backdoor Attack via Trigger Pre-optimization](https://yichics.github.io/files/Pub/PREFed.pdf). 
 
 
-![fig](fig/fig1.png)
+![fig](fig/fig1.jpg)
 
 Under Construction
 
