@@ -1,0 +1,51 @@
+task: Imagenet
+synthesizer: Optimize
+
+data_path: .data
+
+batch_size: 64
+test_batch_size: 100
+lr: 0.001
+momentum: 0.9
+decay: 0.0005
+epochs: 220
+poison_epoch: 200
+poison_epoch_stop: 220
+save_on_epochs: [0,10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200] # [10, 20, 30, 40, 50]
+optimizer: SGD
+log_interval: 100
+
+poisoning_proportion: 0.3
+backdoor_label: 8
+
+resume_model: model_Imagenet_May.17_17.04.07_cx_method/model_epoch_200.pt.tar
+
+save_model: True
+log: True
+report_train_loss: False
+
+transform_train: True
+
+fl: True
+fl_no_models: 100
+fl_local_epochs: 2
+fl_poison_epochs: 2
+fl_total_participants: 100
+fl_eta: 1
+fl_sample_dirichlet: True
+fl_dirichlet_alpha: 0.9
+
+fl_number_of_adversaries: 20
+#fl_number_of_scapegoats: 0
+fl_weight_scale: 5
+fl_adv_group_size: 5
+# fl_single_epoch_attack: 10
+
+
+attack: OptAttack
+defense: FedAvg
+fl_num_neurons: 5
+noise_mask_alpha: 0 # 0.5
+lagrange_step: 0.1
+
+load_indices: False
